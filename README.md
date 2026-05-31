@@ -359,3 +359,12 @@ Released under the [MIT License](LICENSE).
 - IMDb Top 10,000 Movies dataset
 - TMDB Movies dataset
 - Built for the Data Science course term project, 2026.
+
+## AI Assistance Disclosure
+
+This project used Anthropic's Claude as a coding assistant for:
+- Partial implementation and documentation of the `find_best_combinations()` utility
+- Refactoring the modeling pipeline and writing docstrings
+- Drafting this README
+
+All outputs were verified and the final results were produced by the team's own execution.
