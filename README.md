@@ -319,7 +319,7 @@ movie-hit-prediction/
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/movie-hit-prediction.git
+git clone https://github.com/VictorKim00/movie-hit-prediction.git
 cd movie-hit-prediction
 
 # 2. Install dependencies
