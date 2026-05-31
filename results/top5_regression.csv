@@ -1,6 +1,0 @@
-rank,encoder,scaler,model,params,mean_score,std_score,fit_time
-1,onehot,MinMax,GradientBoosting,"{'n_estimators': 200, 'learning_rate': 0.1}",0.8511017704801302,0.007370464069204235,9.639049530029297
-2,ordinal,Standard,GradientBoosting,"{'n_estimators': 200, 'learning_rate': 0.1}",0.8509955631329913,0.0073411951576626625,9.566596269607544
-3,label,Standard,GradientBoosting,"{'n_estimators': 200, 'learning_rate': 0.1}",0.8509955631329913,0.0073411951576626625,9.65377140045166
-4,ordinal,Robust,GradientBoosting,"{'n_estimators': 200, 'learning_rate': 0.1}",0.8509331146091592,0.007264520621955462,9.575704336166382
-5,label,Robust,GradientBoosting,"{'n_estimators': 200, 'learning_rate': 0.1}",0.8509331146091592,0.007264520621955462,9.458009481430054
