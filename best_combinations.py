@@ -231,11 +231,11 @@ def find_best_combinations(
 
     drop_cols = drop_cols or []
 
-    # 타겟 분리
+    # target separation
     y = df[target]
     X_raw = df.drop(columns=[target] + [c for c in drop_cols if c in df.columns])
 
-    # ----- 총 조합 수 -----
+    # ----- total -----
     n_param_points = sum(
         int(np.prod([len(v) for v in pg.values()] or [1]))
         for _, pg in models_with_params.values()
@@ -249,11 +249,11 @@ def find_best_combinations(
     results = []
     count = 0
 
-    # ----- 1축: Encoder -----
+    # ----- 1 axis: Encoder -----
     for enc_name, enc_method in encoders.items():
         X_enc = apply_encoder(X_raw, categorical_cols, enc_method)
 
-        # ----- 2축: Scaler -----
+        # ----- 2 axis: Scaler -----
         for scaler_name, scaler in scalers.items():
             X_scaled = X_enc.copy()
             if scaler is not None:
@@ -261,7 +261,7 @@ def find_best_combinations(
                 if cols:
                     X_scaled[cols] = scaler.fit_transform(X_scaled[cols])
 
-            # ----- 3축: Model -----
+            # ----- 3 axis: Model -----
             for model_name, (base_estimator, param_grid) in models_with_params.items():
                 if param_grid:
                     keys = list(param_grid.keys())
@@ -270,7 +270,7 @@ def find_best_combinations(
                 else:
                     param_combos = [{}]
 
-                # ----- 4축: Hyperparameters -----
+                # ----- 4 axis: Hyperparameters -----
                 for params in param_combos:
                     count += 1
                     estimator = clone(base_estimator).set_params(**params)
@@ -303,7 +303,7 @@ def find_best_combinations(
                               f'{model_name:18s} | score={mean_score:.4f} '
                               f'+/-{std_score:.4f} | {fit_time:.1f}s')
 
-    # ----- 정렬 후 Top-K -----
+    # ----- sort and Top-K -----
     result_df = pd.DataFrame(results).sort_values('mean_score', ascending=False)
     result_df.insert(0, 'rank', range(1, len(result_df) + 1))
     return result_df.head(top_k).reset_index(drop=True)
