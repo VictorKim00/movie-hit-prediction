@@ -1,0 +1,6 @@
+rank,encoder,scaler,model,params,mean_score,std_score,fit_time
+1,label,Standard,XGBoost,"{'n_estimators': 100, 'max_depth': 8}",0.8542337056716175,0.020823461309855452,0.5461995601654053
+2,ordinal,Standard,XGBoost,"{'n_estimators': 100, 'max_depth': 8}",0.8542337056716175,0.020823461309855452,0.5328946113586426
+3,onehot,Standard,XGBoost,"{'n_estimators': 200, 'max_depth': 8}",0.8538817313247176,0.016416440320999034,0.9431593418121338
+4,label,Standard,XGBoost,"{'n_estimators': 200, 'max_depth': 8}",0.8538800902434776,0.01883580027809657,0.7764780521392822
+5,ordinal,Standard,XGBoost,"{'n_estimators': 200, 'max_depth': 8}",0.8538800902434776,0.01883580027809657,0.7603216171264648
